@@ -8,7 +8,7 @@ Description
 -----------
 
 
-A fast [IETF RFC 4648][1] compliant Base32 library for Erlang. 
+A fast [IETF RFC 4648][1] compliant Base32 library for Erlang.
 
 Supports the following algorithms:
 
@@ -31,7 +31,6 @@ Add Besu32 to your ```rebar.config``` dependencies:
     <<"KRUGKIDROVUWG2ZAMJZG653OEBTG66BANJ2W24DTEBXXMZLSEB2GQZJANRQXU6JAMRXWO===">>
 
 #### Decode
-Decode payload with verification
     besu32:decode(<<"KRUGKIDROVUWG2ZAMJZG653OEBTG66BANJ2W24DTEBXXMZLSEB2GQZJANRQXU6JAMRXWO===">>).
     <<"The quick brown fox jumps over the lazy dog">>
 
