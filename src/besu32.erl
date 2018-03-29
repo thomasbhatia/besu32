@@ -84,7 +84,7 @@ decode_binary(<<Body, Rest/binary>>, Acc) ->
 %%====================================================================
 %% Internal functions
 %%====================================================================
-
+-compile({inline, [{b32d, 1}]}).
 b32d(I) when I >= $2 andalso I =< $7 ->
     I - 24;
 b32d(I) when I >= $a andalso I =< $z ->
@@ -93,8 +93,8 @@ b32d(I) when I >= $A andalso I =< $Z ->
     I - $A.
 
 -compile({inline, [{b32e, 1}]}).
-b32e(<<X:5>>) ->
-    element(X+1,
-        {$A, $B, $C, $D, $E, $F, $G, $H, $I, $J, $K, $L, $M,
-         $N, $O, $P, $Q, $R, $S, $T, $U, $V, $W, $X, $Y, $Z,
-         $2, $3, $4, $5, $6, $7}).
+b32e(<<I:5>>) when I >= 0 andalso I =< 25 ->
+    I + $A;
+b32e(<<I:5>>) when I >= 26 andalso I =< 31 ->
+    I + 24.
+
