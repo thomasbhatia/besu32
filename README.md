@@ -22,7 +22,7 @@ Supports the following algorithms:
 Add Besu32 to your ```rebar.config``` dependencies:
 
     {deps, [
-        {jwte,{git , "git@github.com:thomasbhatia/besu32.git", {tag, "v0.5.0"}}}
+        {besu32,{git , "git@github.com:thomasbhatia/besu32.git", {tag, "v0.5.0"}}}
     ]}.
 
 ## Usage
